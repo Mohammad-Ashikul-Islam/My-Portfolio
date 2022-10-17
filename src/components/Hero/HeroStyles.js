@@ -16,4 +16,10 @@ export const LeftSection = styled.div`
 
     margin: 0 auto;
   }
+
 `;
+
+export const A = styled.a`
+  text-decoratin: none;
+  color: inherit;
+`

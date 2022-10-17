@@ -41,7 +41,7 @@ const Header = () =>  (
         <SocialIcons href="https://github.com/Mohammad-Ashikul-Islam">
           <AiFillGithub size="3rem" />
         </SocialIcons>
-        <SocialIcons href="https://google.com">
+        <SocialIcons href="https://www.linkedin.com/in/mdashikul2222/">
           <TiSocialLinkedinCircular size="4rem" />
         </SocialIcons>
         <SocialIcons href="https://www.stopstalk.com/user/profile/Mohammad_Ashikul_Islam">

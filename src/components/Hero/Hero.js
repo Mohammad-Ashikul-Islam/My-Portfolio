@@ -3,10 +3,11 @@ import { TypeAnimation } from 'react-type-animation';
 import { TextLoop } from "react-text-loop-next";
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import Button from '../../styles/GlobalComponents/Button';
-import { LeftSection } from './HeroStyles';
+import { LeftSection, A } from './HeroStyles';
 import {ResumeButton} from '../../styles/GlobalComponents/Button'
 
 const Hero = (props) => (
+  
   <>
     <Section row nopadding>
       <LeftSection>
@@ -35,7 +36,7 @@ const Hero = (props) => (
                 ]}
               />
         </SectionText>
-        <ResumeButton><b>Download Resume</b></ResumeButton>
+        <ResumeButton><A href='https://drive.google.com/uc?id=18izbpgl2WR8-sEU0kZQ1kwgUlLtoiS7T&export=download' ><b>Download Resume</b></A></ResumeButton>
       </LeftSection>
     </Section>
   </>
