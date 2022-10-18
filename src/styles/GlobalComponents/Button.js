@@ -22,5 +22,11 @@ export const ResumeButton = styled.button`
     background-color: orchid;
     border: 1px solid lime;
   }
+
+  @media ${props => props.theme.breakpoints.sm}{
+    font-size: 19px;
+		width: 60%;
+    
+	}
 `
 export default Button

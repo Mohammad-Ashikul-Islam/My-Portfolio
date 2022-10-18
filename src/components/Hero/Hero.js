@@ -1,15 +1,13 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { TextLoop } from "react-text-loop-next";
-import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import Button from '../../styles/GlobalComponents/Button';
-import { LeftSection, A } from './HeroStyles';
+import { LeftSection, A, Section, SectionText, SectionTitle } from './HeroStyles';
 import {ResumeButton} from '../../styles/GlobalComponents/Button'
 
 const Hero = (props) => (
   
   <>
-    <Section row nopadding>
+    <Section row nopadding height width>
       <LeftSection>
         <SectionTitle main center>
           Hello <br />
@@ -37,6 +35,7 @@ const Hero = (props) => (
               />
         </SectionText>
         <ResumeButton><A href='https://drive.google.com/uc?id=18izbpgl2WR8-sEU0kZQ1kwgUlLtoiS7T&export=download' ><b>Download Resume</b></A></ResumeButton>
+        <br/>
       </LeftSection>
     </Section>
   </>
