@@ -1,0 +1,96 @@
+"use client"
+
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { ThemeToggle } from "./theme-toggle";
+import { useState, useEffect } from "react";
+
+const navigationMenuItems = [
+  { title: "Home", href: "#home" },
+  { title: "About", href: "#about" },
+  { title: "Projects", href: "#projects" },
+  { title: "Skills", href: "#skills" },
+  { title: "Contact", href: "#contact" },
+];
+
+export function Navbar() {
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navigationMenuItems.map(item => item.href.substring(1));
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.substring(1);
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      const offsetTop = element.offsetTop - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth"
+      });
+      setActiveSection(targetId);
+    }
+  };
+
+  return (
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto px-4 py-4 flex justify-center items-center gap-4">
+        <NavigationMenu>
+          <NavigationMenuList className="space-x-1">
+            {navigationMenuItems.map((item) => (
+              <NavigationMenuItem key={item.title}>
+                <NavigationMenuLink
+                  className={cn(
+                    "inline-flex h-9 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors",
+                    "hover:text-foreground hover:bg-accent rounded-md",
+                    "focus:text-foreground focus:outline-none focus:bg-accent",
+                    "disabled:pointer-events-none disabled:opacity-50",
+                    activeSection === item.href.substring(1) && "text-foreground bg-accent"
+                  )}
+                  asChild
+                >
+                  <Link 
+                    href={item.href}
+                    onClick={(e) => handleClick(e, item.href)}
+                  >
+                    {item.title}
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+
+        <ThemeToggle />
+      </div>
+    </header>
+  );
+}
