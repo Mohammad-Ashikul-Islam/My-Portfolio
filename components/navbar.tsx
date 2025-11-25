@@ -14,8 +14,10 @@ import { useState, useEffect } from "react";
 const navigationMenuItems = [
   { title: "Home", href: "#home" },
   { title: "About", href: "#about" },
+  { title: "Experience", href: "#experience" },
   { title: "Projects", href: "#projects" },
-  { title: "Skills", href: "#skills" },
+  { title: "Activities", href: "#activities" },
+  { title: "Education", href: "#education" },
   { title: "Contact", href: "#contact" },
 ];
 

@@ -67,3 +67,57 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  /* Gradient text animation */
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+  
+  /* Role text fade in/out animation */
+  @keyframes fade-in-out {
+    0%, 100% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    10%, 90% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-role {
+    animation: fade-in-out 4s ease-in-out infinite;
+  }
+  
+  /* Shimmer effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 3s infinite;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+  }
+}
