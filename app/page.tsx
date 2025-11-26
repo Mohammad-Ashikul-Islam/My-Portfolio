@@ -29,9 +29,9 @@ export default function Home() {
               {/* Roles */}
               <div className="flex flex-wrap items-center justify-center gap-3 text-muted-foreground md:text-lg">
                 <span className="font-medium text-foreground">Software Engineer</span>
-                <span className="hidden md:inline">•</span>
+                <span className="text-primary">•</span>
                 <span className="font-medium text-foreground">Aspiring Learner</span>
-                <span className="hidden md:inline">•</span>
+                <span className="text-primary">•</span>
                 <span className="font-medium text-foreground">Tech Enthusiast</span>
               </div>
 
@@ -344,7 +344,7 @@ export default function Home() {
                 {/* WellTravel Project */}
                 <div className="group p-6 border-2 rounded-xl bg-card shadow-md hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] hover:border-teal-500/50">
                   <div className="space-y-4">
-                    <div className="flex items-start justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                       <h3 className="text-2xl font-bold group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">WellTravel</h3>
                       <div className="flex gap-2">
                         <a 
@@ -395,7 +395,7 @@ export default function Home() {
                 {/* BLT Project */}
                 <div className="group p-6 border-2 rounded-xl bg-card shadow-md hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] hover:border-orange-500/50">
                   <div className="space-y-4">
-                    <div className="flex items-start justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                       <h3 className="text-2xl font-bold group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">BLT</h3>
                       <div className="flex gap-2">
                         <a 
@@ -463,13 +463,13 @@ export default function Home() {
                 <div className="grid gap-4 md:grid-cols-2 mb-8">
                   <div className="group p-8 border-2 rounded-xl bg-gradient-to-br from-background via-muted/30 to-background border-border shadow-md hover:shadow-2xl hover:border-primary/50 hover:scale-105 transition-all duration-300">
                     <div className="text-center">
-                      <p className="text-5xl font-extrabold text-foreground group-hover:text-primary transition-colors">1000+</p>
+                      <p className="text-4xl md:text-5xl font-extrabold text-foreground group-hover:text-primary transition-colors">1000+</p>
                       <p className="text-sm font-semibold text-muted-foreground mt-2">Problems Solved</p>
                     </div>
                   </div>
                   <div className="group p-8 border-2 rounded-xl bg-gradient-to-br from-background via-muted/30 to-background border-border shadow-md hover:shadow-2xl hover:border-primary/50 hover:scale-105 transition-all duration-300">
                     <div className="text-center">
-                      <p className="text-5xl font-extrabold text-foreground group-hover:text-primary transition-colors">150+</p>
+                      <p className="text-4xl md:text-5xl font-extrabold text-foreground group-hover:text-primary transition-colors">150+</p>
                       <p className="text-sm font-semibold text-muted-foreground mt-2">Contests Participated</p>
                     </div>
                   </div>
@@ -683,7 +683,7 @@ export default function Home() {
               <div className="space-y-6">
                 {/* Bachelor's Degree */}
                 <div className="group p-6 border-2 rounded-xl bg-card shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-fuchsia-500/50">
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
                     <div className="p-3 rounded-lg bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-400 group-hover:bg-fuchsia-500/20 transition-colors">
                       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
@@ -701,7 +701,7 @@ export default function Home() {
 
                 {/* Higher Secondary */}
                 <div className="group p-6 border-2 rounded-xl bg-card shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-cyan-500/50">
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
                     <div className="p-3 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 group-hover:bg-cyan-500/20 transition-colors">
                       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -717,7 +717,7 @@ export default function Home() {
 
                 {/* Secondary School */}
                 <div className="group p-6 border-2 rounded-xl bg-card shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-indigo-500/50">
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
                     <div className="p-3 rounded-lg bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 group-hover:bg-indigo-500/20 transition-colors">
                       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
