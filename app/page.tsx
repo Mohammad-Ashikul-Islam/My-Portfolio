@@ -18,10 +18,10 @@ export default function Home() {
             <div className="max-w-5xl mx-auto text-center space-y-8">
               {/* Greeting */}
               <div className="space-y-4">
-                <p className="text-lg md:text-xl text-muted-foreground font-medium tracking-wide">
+                <p className="text-2xl md:text-3xl text-muted-foreground font-medium tracking-wide">
                   Hi, I am
                 </p>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground pb-2">
+                <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground pb-2">
                   Mohammad Ashikul Islam
                 </h1>
               </div>
@@ -42,7 +42,7 @@ export default function Home() {
                   className="text-foreground/60 hover:text-red-500 transition-colors hover:scale-110"
                   title="Email"
                 >
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </a>
