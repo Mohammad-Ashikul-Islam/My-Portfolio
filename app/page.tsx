@@ -741,7 +741,7 @@ export default function Home() {
                   {/* Email */}
                   <a 
                     href="mailto:mdashikul2222@gmail.com"
-                    className="p-4 rounded-lg bg-card border-2 hover:border-primary hover:bg-primary/10 transition-all hover:scale-110"
+                    className="p-4 rounded-full bg-card border-2 hover:border-primary hover:bg-primary/10 transition-all hover:scale-110"
                     title="Email"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -752,7 +752,7 @@ export default function Home() {
                   {/* Phone */}
                   <a 
                     href="tel:+8801859140956"
-                    className="p-4 rounded-lg bg-card border-2 hover:border-primary hover:bg-primary/10 transition-all hover:scale-110"
+                    className="p-4 rounded-full bg-card border-2 hover:border-primary hover:bg-primary/10 transition-all hover:scale-110"
                     title="Phone"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -765,7 +765,7 @@ export default function Home() {
                     href="https://github.com/Mohammad-Ashikul-Islam"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-4 rounded-lg bg-card border-2 hover:border-primary hover:bg-primary/10 transition-all hover:scale-110"
+                    className="p-4 rounded-full bg-card border-2 hover:border-primary hover:bg-primary/10 transition-all hover:scale-110"
                     title="GitHub"
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -778,7 +778,7 @@ export default function Home() {
                     href="https://linkedin.com/in/mdashikul2222"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-4 rounded-lg bg-card border-2 hover:border-primary hover:bg-primary/10 transition-all hover:scale-110"
+                    className="p-4 rounded-full bg-card border-2 hover:border-primary hover:bg-primary/10 transition-all hover:scale-110"
                     title="LinkedIn"
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -791,7 +791,7 @@ export default function Home() {
                     href="https://facebook.com/mdashikul2222"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-4 rounded-lg bg-card border-2 hover:border-primary hover:bg-primary/10 transition-all hover:scale-110"
+                    className="p-4 rounded-full bg-card border-2 hover:border-primary hover:bg-primary/10 transition-all hover:scale-110"
                     title="Facebook"
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -804,7 +804,7 @@ export default function Home() {
                     href="https://twitter.com/mdashikul2222"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-4 rounded-lg bg-card border-2 hover:border-primary hover:bg-primary/10 transition-all hover:scale-110"
+                    className="p-4 rounded-full bg-card border-2 hover:border-primary hover:bg-primary/10 transition-all hover:scale-110"
                     title="Twitter"
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -818,9 +818,9 @@ export default function Home() {
       </main>
 
       <footer className="border-t py-6 md:py-0">
-        <div className="container mx-auto px-4 flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
-          <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            Built with Next.js, TypeScript, and shadcn/ui
+        <div className="container mx-auto px-4 flex flex-col items-center justify-center gap-4 md:h-16 md:flex-row">
+          <p className="text-center text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Mohammad Ashikul Islam. All rights reserved.
           </p>
         </div>
       </footer>
