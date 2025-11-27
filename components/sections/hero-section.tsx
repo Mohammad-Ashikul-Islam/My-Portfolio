@@ -1,7 +1,27 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { personalInfo, socialLinks } from "../data/portfolio-data";
 import { SocialIcon } from "../ui/social-icon";
 
 export function HeroSection() {
+  const [displayedName, setDisplayedName] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+  const fullName = personalInfo.name;
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setDisplayedName(fullName.substring(0, i + 1));
+      i++;
+      if (i === fullName.length) {
+        clearInterval(interval);
+        setIsTyping(false);
+      }
+    }, 100);
+    return () => clearInterval(interval);
+  }, [fullName]);
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-muted/30 relative overflow-hidden">
       {/* Animated background elements */}
@@ -17,8 +37,9 @@ export function HeroSection() {
             <p className="text-2xl md:text-3xl text-muted-foreground font-medium tracking-wide">
               {personalInfo.greeting}
             </p>
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground pb-2">
-              {personalInfo.name}
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground pb-2 min-h-[3rem]">
+              {displayedName}
+              {isTyping && <span className="animate-pulse">|</span>}
             </h1>
           </div>
           
