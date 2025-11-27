@@ -37,60 +37,94 @@ export function SocialIcon({ name, url, icon, color, variant = "default" }: Soci
     return icons[iconType] || icons.email;
   };
 
-  const colorClasses: Record<string, { default: string; large: string; largeBorder: string; largeHover: string }> = {
+  const colorClasses: Record<string, { default: string; large: string; largeBorder: string; largeHover: string; largeBg: string; largeShadow: string }> = {
     "red-500": {
       default: "hover:text-red-500",
       large: "group-hover:text-red-600 dark:group-hover:text-red-400",
       largeBorder: "hover:border-red-500",
-      largeHover: "hover:bg-red-500/10"
+      largeHover: "hover:bg-red-500/20",
+      largeBg: "bg-red-500/10",
+      largeShadow: "hover:shadow-lg hover:shadow-red-500/25"
     },
     foreground: {
       default: "hover:text-foreground",
       large: "group-hover:text-foreground",
       largeBorder: "hover:border-foreground",
-      largeHover: "hover:bg-foreground/10"
+      largeHover: "hover:bg-foreground/20",
+      largeBg: "bg-foreground/10",
+      largeShadow: "hover:shadow-lg hover:shadow-foreground/25"
     },
     "[#0077b5]": {
       default: "hover:text-[#0077b5]",
       large: "group-hover:text-[#0077b5]",
       largeBorder: "hover:border-[#0077b5]",
-      largeHover: "hover:bg-[#0077b5]/10"
+      largeHover: "hover:bg-[#0077b5]/20",
+      largeBg: "bg-[#0077b5]/10",
+      largeShadow: "hover:shadow-lg hover:shadow-[#0077b5]/25"
     },
     green: {
       default: "hover:text-green-600",
       large: "group-hover:text-green-600 dark:group-hover:text-green-400",
       largeBorder: "hover:border-green-500",
-      largeHover: "hover:bg-green-500/10"
+      largeHover: "hover:bg-green-500/20",
+      largeBg: "bg-green-500/10",
+      largeShadow: "hover:shadow-lg hover:shadow-green-500/25"
     },
     fuchsia: {
       default: "hover:text-fuchsia-600",
       large: "group-hover:text-fuchsia-600 dark:group-hover:text-fuchsia-400",
       largeBorder: "hover:border-fuchsia-500",
-      largeHover: "hover:bg-fuchsia-500/10"
+      largeHover: "hover:bg-fuchsia-500/20",
+      largeBg: "bg-fuchsia-500/10",
+      largeShadow: "hover:shadow-lg hover:shadow-fuchsia-500/25"
     },
     zinc: {
       default: "hover:text-zinc-700 dark:hover:text-zinc-400",
       large: "group-hover:text-zinc-700 dark:group-hover:text-zinc-400",
       largeBorder: "hover:border-zinc-700 dark:hover:border-zinc-400",
-      largeHover: "hover:bg-zinc-700/10 dark:hover:bg-zinc-400/10"
+      largeHover: "hover:bg-zinc-700/20 dark:hover:bg-zinc-400/20",
+      largeBg: "bg-zinc-700/10 dark:bg-zinc-400/10",
+      largeShadow: "hover:shadow-lg hover:shadow-zinc-700/25 dark:hover:shadow-zinc-400/25"
     },
     indigo: {
       default: "hover:text-indigo-600",
       large: "group-hover:text-indigo-600 dark:group-hover:text-indigo-400",
       largeBorder: "hover:border-indigo-600",
-      largeHover: "hover:bg-indigo-600/10"
+      largeHover: "hover:bg-indigo-600/20",
+      largeBg: "bg-indigo-600/10",
+      largeShadow: "hover:shadow-lg hover:shadow-indigo-600/25"
     },
     "blue-500": {
       default: "hover:text-blue-500",
       large: "group-hover:text-blue-500 dark:group-hover:text-blue-400",
       largeBorder: "hover:border-blue-500",
-      largeHover: "hover:bg-blue-500/10"
+      largeHover: "hover:bg-blue-500/20",
+      largeBg: "bg-blue-500/10",
+      largeShadow: "hover:shadow-lg hover:shadow-blue-500/25"
     },
     "yellow-600": {
       default: "hover:text-yellow-600",
       large: "group-hover:text-yellow-600 dark:group-hover:text-yellow-400",
       largeBorder: "hover:border-yellow-600",
-      largeHover: "hover:bg-yellow-600/10"
+      largeHover: "hover:bg-yellow-600/20",
+      largeBg: "bg-yellow-600/10",
+      largeShadow: "hover:shadow-lg hover:shadow-yellow-600/25"
+    },
+    blue: {
+      default: "hover:text-blue-500",
+      large: "group-hover:text-blue-500 dark:group-hover:text-blue-400",
+      largeBorder: "hover:border-blue-500",
+      largeHover: "hover:bg-blue-500/20",
+      largeBg: "bg-blue-500/10",
+      largeShadow: "hover:shadow-lg hover:shadow-blue-500/25"
+    },
+    yellow: {
+      default: "hover:text-yellow-500",
+      large: "group-hover:text-yellow-500 dark:group-hover:text-yellow-400",
+      largeBorder: "hover:border-yellow-500",
+      largeHover: "hover:bg-yellow-500/20",
+      largeBg: "bg-yellow-500/10",
+      largeShadow: "hover:shadow-lg hover:shadow-yellow-500/25"
     }
   };
 
@@ -103,7 +137,7 @@ export function SocialIcon({ name, url, icon, color, variant = "default" }: Soci
         href={url}
         target={url.startsWith("http") ? "_blank" : undefined}
         rel={url.startsWith("http") ? "noopener noreferrer" : undefined}
-        className={`group p-4 rounded-full bg-card border-2 transition-all hover:scale-110 ${classes.largeBorder} ${classes.largeHover}`}
+        className={`group p-4 rounded-full border-2 transition-all duration-300 hover:scale-110 ${classes.largeBg} ${classes.largeBorder} ${classes.largeHover} ${classes.largeShadow}`}
         title={name}
       >
         <svg 
