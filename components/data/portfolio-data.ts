@@ -97,7 +97,7 @@ export const experiences = [
     company: "WellDev Bangladesh Ltd.",
     period: "Aug 2024 – June 2025",
     responsibilities: [
-      "Implemented Content Security Policy (CSP) and rate limiting for enhanced security",
+      "Implemented content security policy (CSP) and rate limiting for enhanced security",
       "Developed post-booking operations and internationalization (I18N)",
       "Created traveler matching algorithms for optimized user experience",
     ],

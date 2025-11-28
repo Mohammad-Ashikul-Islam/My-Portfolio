@@ -5,7 +5,7 @@ interface SkillCardProps {
   icon: string;
 }
 
-export function SkillCard({ name, category, color }: SkillCardProps) {
+export function SkillCard({ name, category, color, icon }: SkillCardProps) {
   const getIconPath = (icon: string) => {
     const icons: Record<string, string> = {
       rails: "M12 2L3 7v10l9 5 9-5V7l-9-5zm0 2.18l6.45 3.59L12 11.36 5.55 7.77 12 4.18zM5 9.13l6 3.35v6.7l-6-3.35v-6.7zm8 10.05v-6.7l6-3.35v6.7l-6 3.35z",
@@ -64,7 +64,7 @@ export function SkillCard({ name, category, color }: SkillCardProps) {
       <div className="flex items-center gap-4">
         <div className={`p-3 rounded-lg transition-colors ${classes.icon}`}>
           <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-            <path d={getIconPath(name.toLowerCase().replace(/\s/g, ''))} />
+            <path d={getIconPath(icon)} />
           </svg>
         </div>
         <div>
