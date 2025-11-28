@@ -56,8 +56,8 @@ export function SocialIcon({ name, url, icon, color, variant = "default" }: Soci
     },
     "[#0077b5]": {
       default: "hover:text-[#0077b5]",
-      large: "group-hover:text-[#0077b5]",
-      largeBorder: "hover:border-[#0077b5]",
+      large: "text-[#0077b5] group-hover:brightness-110",
+      largeBorder: "border-[#0077b5]/20 hover:border-[#0077b5]",
       largeHover: "hover:bg-[#0077b5]/20",
       largeBg: "bg-[#0077b5]/10",
       largeShadow: "hover:shadow-lg hover:shadow-[#0077b5]/25"
@@ -88,16 +88,16 @@ export function SocialIcon({ name, url, icon, color, variant = "default" }: Soci
     },
     indigo: {
       default: "hover:text-indigo-600",
-      large: "group-hover:text-indigo-600 dark:group-hover:text-indigo-400",
-      largeBorder: "hover:border-indigo-600",
+      large: "text-indigo-600 dark:text-indigo-400 group-hover:brightness-110",
+      largeBorder: "border-indigo-600/20 hover:border-indigo-600",
       largeHover: "hover:bg-indigo-600/20",
       largeBg: "bg-indigo-600/10",
       largeShadow: "hover:shadow-lg hover:shadow-indigo-600/25"
     },
     "blue-500": {
       default: "hover:text-blue-500",
-      large: "group-hover:text-blue-500 dark:group-hover:text-blue-400",
-      largeBorder: "hover:border-blue-500",
+      large: "text-blue-500 dark:text-blue-400 group-hover:brightness-110",
+      largeBorder: "border-blue-500/20 hover:border-blue-500",
       largeHover: "hover:bg-blue-500/20",
       largeBg: "bg-blue-500/10",
       largeShadow: "hover:shadow-lg hover:shadow-blue-500/25"

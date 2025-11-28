@@ -265,13 +265,13 @@ export const contactLinks = [
     name: "LinkedIn",
     url: "https://linkedin.com/in/mdashikul2222",
     icon: "linkedin",
-    color: "indigo",
+    color: "[#0077b5]",
   },
   {
     name: "Facebook",
     url: "https://facebook.com/mdashikul2222",
     icon: "facebook",
-    color: "blue",
+    color: "blue-500",
   },
   {
     name: "Twitter",
