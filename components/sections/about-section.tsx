@@ -17,7 +17,7 @@ export function AboutSection() {
                 {personalInfo.bio.split('Mohammad Ashikul Islam').map((part, index) => (
                   index === 0 ? (
                     <span key={index}>
-                      I&apos;m <span className="font-semibold text-foreground">Mohammad Ashikul Islam</span>{part}
+                      {part}<span className="font-semibold text-foreground">Mohammad Ashikul Islam</span>
                     </span>
                   ) : (
                     <span key={index}>{part}</span>

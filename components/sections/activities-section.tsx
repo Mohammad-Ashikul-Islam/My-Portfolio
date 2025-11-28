@@ -17,7 +17,7 @@ export function ActivitiesSection() {
             <div className="grid gap-4 md:grid-cols-2 mb-8">
               <div className="group p-8 border-2 rounded-xl bg-gradient-to-br from-background via-muted/30 to-background border-border shadow-md hover:shadow-2xl hover:border-primary/50 hover:scale-105 transition-all duration-300">
                 <div className="text-center">
-                  <p className="text-4xl md:text-5xl font-extrabold text-foreground group-hover:text-primary transition-colors">
+                  <p className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:via-purple-600 group-hover:to-pink-600 transition-all">
                     {competitiveProgramming.totalProblems}
                   </p>
                   <p className="text-sm font-semibold text-muted-foreground mt-2">Problems Solved</p>
@@ -25,7 +25,7 @@ export function ActivitiesSection() {
               </div>
               <div className="group p-8 border-2 rounded-xl bg-gradient-to-br from-background via-muted/30 to-background border-border shadow-md hover:shadow-2xl hover:border-primary/50 hover:scale-105 transition-all duration-300">
                 <div className="text-center">
-                  <p className="text-4xl md:text-5xl font-extrabold text-foreground group-hover:text-primary transition-colors">
+                  <p className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:via-teal-600 group-hover:to-cyan-600 transition-all">
                     {competitiveProgramming.totalContests}
                   </p>
                   <p className="text-sm font-semibold text-muted-foreground mt-2">Contests Participated</p>

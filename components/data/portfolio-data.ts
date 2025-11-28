@@ -132,7 +132,7 @@ export const projects = [
   {
     name: "BLT",
     description: "Ride-sharing platform",
-    url: "https://blt-ride.com",
+    url: "https://apps.apple.com/lv/app/pick-e-bike/id1373747610",
     features: [
       "Built comprehensive admin portal for platform management",
       "Developed integration tests and refactored legacy backend code",
