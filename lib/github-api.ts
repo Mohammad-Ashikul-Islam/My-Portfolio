@@ -1,7 +1,7 @@
 import { GitHubEvent, GitHubActivity, activityTypeMap } from "./github-types";
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const GITHUB_USERNAME = process.env.GITHUB_USERNAME || "Mohammad-Ashikul-Islam";
+const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
 
 /**
  * Fetches recent GitHub activities for the configured user
