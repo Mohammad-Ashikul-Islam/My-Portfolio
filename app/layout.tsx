@@ -6,8 +6,11 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "A modern portfolio built with Next.js, TypeScript, and shadcn/ui",
+  title: "Ashikul Islam",
+  description: "Mohammad Ashikul Islam - Software Engineer Portfolio",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
