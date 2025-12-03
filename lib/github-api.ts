@@ -1,50 +1,30 @@
-import { GitHubEvent, GitHubActivity, activityTypeMap } from "./github-types";
-
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
+import { GitHubActivity } from "./github-types";
 
 /**
- * Fetches recent GitHub activities for the configured user
+ * Fetches recent GitHub activities via API route (server-side cached)
+ * The API route implements hourly caching to minimize GitHub API token usage
  * @param limit - Number of activities to fetch (default: 5)
  * @returns Array of formatted GitHub activities
  */
 export async function fetchGitHubActivities(limit: number = 5): Promise<GitHubActivity[]> {
   try {
+    // Determine the base URL for API calls
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+    
     const response = await fetch(
-      `https://api.github.com/users/${GITHUB_USERNAME}/events/public?per_page=${limit}`,
+      `${baseUrl}/api/github-activities?limit=${limit}`,
       {
-        headers: {
-          Authorization: `Bearer ${GITHUB_TOKEN}`,
-          Accept: "application/vnd.github.v3+json",
-        },
+        // Disable Next.js caching - let our API route handle caching
+        cache: "no-store",
       }
     );
 
     if (!response.ok) {
-      throw new Error(`GitHub API error: ${response.status}`);
+      throw new Error(`API error: ${response.status}`);
     }
 
-    const events: GitHubEvent[] = await response.json();
-
-    // Transform events to simplified activities
-    const activities: GitHubActivity[] = events.map((event) => {
-      const typeInfo = activityTypeMap[event.type] || {
-        action: event.type.replace("Event", ""),
-        icon: "activity",
-      };
-
-      return {
-        id: event.id,
-        type: event.type,
-        repo: event.repo.name,
-        repoUrl: `https://github.com/${event.repo.name}`,
-        action: typeInfo.action,
-        timestamp: event.created_at,
-        icon: typeInfo.icon,
-      };
-    });
-
-    return activities;
+    const data = await response.json();
+    return data.activities || [];
   } catch (error) {
     console.error("Failed to fetch GitHub activities:", error);
     return [];
