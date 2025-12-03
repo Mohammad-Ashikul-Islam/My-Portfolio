@@ -3,45 +3,13 @@ import { GitHubEvent, GitHubActivity, activityTypeMap } from "./github-types";
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
 
-// Cache configuration
-const CACHE_DURATION = 60 * 60 * 1000; // 1 hour in milliseconds
-
-// In-memory cache
-let cache: {
-  data: GitHubActivity[] | null;
-  timestamp: number | null;
-} = {
-  data: null,
-  timestamp: null,
-};
-
-/**
- * Checks if the cache is still valid
- * @returns true if cache exists and is not expired
- */
-function isCacheValid(): boolean {
-  if (!cache.data || !cache.timestamp) {
-    return false;
-  }
-  const now = Date.now();
-  return now - cache.timestamp < CACHE_DURATION;
-}
-
 /**
  * Fetches recent GitHub activities for the configured user
- * Uses in-memory cache with 1-hour expiration to minimize API token usage
  * @param limit - Number of activities to fetch (default: 5)
  * @returns Array of formatted GitHub activities
  */
 export async function fetchGitHubActivities(limit: number = 5): Promise<GitHubActivity[]> {
-  // Return cached data if valid
-  if (isCacheValid() && cache.data) {
-    console.log("Using cached GitHub activities");
-    return cache.data;
-  }
-
   try {
-    console.log("Fetching fresh GitHub activities from API");
     const response = await fetch(
       `https://api.github.com/users/${GITHUB_USERNAME}/events/public?per_page=${limit}`,
       {
@@ -49,8 +17,6 @@ export async function fetchGitHubActivities(limit: number = 5): Promise<GitHubAc
           Authorization: `Bearer ${GITHUB_TOKEN}`,
           Accept: "application/vnd.github.v3+json",
         },
-        // Disable Next.js caching to rely on our own cache logic
-        next: { revalidate: 0 },
       }
     );
 
@@ -78,20 +44,9 @@ export async function fetchGitHubActivities(limit: number = 5): Promise<GitHubAc
       };
     });
 
-    // Update cache
-    cache = {
-      data: activities,
-      timestamp: Date.now(),
-    };
-
     return activities;
   } catch (error) {
     console.error("Failed to fetch GitHub activities:", error);
-    // Return cached data if available, even if expired
-    if (cache.data) {
-      console.log("Returning stale cache due to error");
-      return cache.data;
-    }
     return [];
   }
 }
