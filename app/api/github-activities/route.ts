@@ -94,7 +94,7 @@ export async function GET(request: Request) {
     return NextResponse.json({
       activities,
       cached: false,
-      cachedAt: new Date(cache.timestamp!).toISOString(),
+      cachedAt: new Date(cache.timestamp).toISOString(),
     });
   } catch (error) {
     console.error("❌ Failed to fetch GitHub activities:", error);
