@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // Removed 'output: export' to enable SSR/ISR on Netlify
+  // This allows server-side caching to work properly
   images: {
     unoptimized: true,
   },
