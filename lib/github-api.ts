@@ -17,6 +17,9 @@ export async function fetchGitHubActivities(limit: number = 5): Promise<GitHubAc
           Authorization: `Bearer ${GITHUB_TOKEN}`,
           Accept: "application/vnd.github.v3+json",
         },
+        next: {
+          revalidate: 3600, // Cache for 1 hour (3600 seconds)
+        },
       }
     );
 
